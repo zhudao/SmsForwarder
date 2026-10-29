@@ -744,6 +744,44 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/layout_enable_close_to_earpiece_turn_off_screen"
+                style="@style/BarStyle.Switch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/close_to_earpiece_turn_off_screen"
+                        android:textStyle="bold"
+                        tools:ignore="RelativeOverlap" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/close_to_earpiece_turn_off_screen_tips"
+                        android:textSize="@dimen/text_size_mini"
+                        tools:ignore="SmallSp" />
+
+                </LinearLayout>
+
+                <com.xuexiang.xui.widget.button.switchbutton.SwitchButton
+                    android:id="@+id/sb_enable_close_to_earpiece_turn_off_screen"
+                    style="@style/SwitchButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+            </LinearLayout>
+
+            <LinearLayout
                 style="@style/BarStyle.Switch"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
@@ -875,6 +913,32 @@
                         app:es_maxLine="1" />
 
                 </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_app_notify_blacklist"
+                style="@style/BarStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/app_notify_blacklist"
+                    android:textStyle="bold"
+                    tools:ignore="RelativeOverlap" />
+
+                <com.xuexiang.xui.widget.edittext.materialedittext.MaterialEditText
+                    android:id="@+id/et_app_notify_blacklist"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/app_notify_blacklist_hint"
+                    android:inputType="textMultiLine"
+                    app:met_clearButton="true"
+                    tools:ignore="TextContrastCheck" />
 
             </LinearLayout>
 
@@ -1226,7 +1290,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/enabe_cactus_tips"
+                        android:text="@string/enable_cactus_tips"
                         android:textSize="@dimen/text_size_mini"
                         tools:ignore="SmallSp" />
 
@@ -1280,6 +1344,43 @@
                                 tools:ignore="SmallSp" />
 
                         </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/layout_music_interval"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/music_interval"
+                            android:textSize="@dimen/text_size_small"
+                            android:textStyle="bold"
+                            tools:ignore="SmallSp" />
+
+                        <com.xuexiang.xui.widget.picker.XSeekBar
+                            android:id="@+id/xsb_music_interval"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:layout_weight="1"
+                            android:padding="0dp"
+                            app:xsb_max="300"
+                            app:xsb_min="1" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:text="@string/seconds"
+                            android:textSize="@dimen/text_size_small"
+                            android:textStyle="bold" />
 
                     </LinearLayout>
 
@@ -1567,6 +1668,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/layout_sim2"
                 style="@style/BarStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -1741,41 +1843,13 @@
                     android:text=""
                     tools:ignore="RtlHardcoded,SpeakableTextPresentCheck" />
 
-                <LinearLayout
+                <GridLayout
+                    android:id="@+id/gl_sms_template"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <com.xuexiang.xui.widget.button.shadowbutton.RippleShadowShadowButton
-                        android:id="@+id/bt_insert_sender"
-                        style="@style/insertButtonStyle"
-                        android:text="@string/insert_sender" />
-
-                    <com.xuexiang.xui.widget.button.shadowbutton.RippleShadowShadowButton
-                        android:id="@+id/bt_insert_content"
-                        style="@style/insertButtonStyle"
-                        android:layout_marginStart="3dp"
-                        android:text="@string/insert_content" />
-
-                    <com.xuexiang.xui.widget.button.shadowbutton.RippleShadowShadowButton
-                        android:id="@+id/bt_insert_extra"
-                        style="@style/insertButtonStyle"
-                        android:layout_marginStart="3dp"
-                        android:text="@string/insert_extra" />
-
-                    <com.xuexiang.xui.widget.button.shadowbutton.RippleShadowShadowButton
-                        android:id="@+id/bt_insert_time"
-                        style="@style/insertButtonStyle"
-                        android:layout_marginStart="3dp"
-                        android:text="@string/insert_time" />
-
-                    <com.xuexiang.xui.widget.button.shadowbutton.RippleShadowShadowButton
-                        android:id="@+id/bt_insert_device_name"
-                        style="@style/insertButtonStyle"
-                        android:layout_marginStart="3dp"
-                        android:text="@string/insert_device_name" />
-
-                </LinearLayout>
+                    android:layout_gravity="center"
+                    android:columnCount="4"
+                    android:orientation="horizontal" />
 
             </LinearLayout>
 

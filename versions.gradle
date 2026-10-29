@@ -2,8 +2,8 @@ import java.util.regex.Matcher
 import java.util.regex.Pattern
 
 def build_versions = [:]
-build_versions.version_code = 53
-build_versions.version_name = "3.3.2"
+build_versions.version_code = 56
+build_versions.version_name = "3.5.1"
 build_versions.min_sdk = 19
 build_versions.target_sdk = 33
 build_versions.build_tools = "33.0.1"
@@ -32,7 +32,7 @@ versions.butterknife = "10.2.3"
 versions.runner = "1.4.0"
 versions.gson = "2.10.1" //https://github.com/google/gson
 versions.okhttp3 = "3.12.13" //不可升级，为了支持 API 19
-versions.leakcanary = "2.13" //https://github.com/square/leakcanary
+versions.leakcanary = "2.14" //https://github.com/square/leakcanary
 versions.lifecycle = "2.2.0"
 versions.kotlin = '1.7.21'
 
@@ -40,11 +40,11 @@ versions.kotlin = '1.7.21'
 
 versions.xui = "dev~1.2.2-SNAPSHOT"
 versions.xupdate = "2.1.5"
-versions.xaop = "dab6b77b2f" //1.1.0
+versions.xaop = "1.1.0"
 versions.xutil = "2.0.0"
-versions.xhttp2 = "9115cfcd5a" //2.0.9
+versions.xhttp2 = "2.0.10"
 versions.xpage = "3.3.0"
-versions.xrouter = "1.0.1"
+versions.xrouter = "1.1.0"
 
 //========xlibrary end========//
 
@@ -132,18 +132,18 @@ deps.leakcanary = "com.squareup.leakcanary:leakcanary-android:$versions.leakcana
 
 def xlibrary = [:]
 
-xlibrary.xui = "com.github.pppscn:XUI:$versions.xui" //com.github.xuexiangjys:XUI
-xlibrary.xupdate = "com.github.xuexiangjys:XUpdate:$versions.xupdate"
-xlibrary.xaop_runtime = "com.github.pppscn.XAOP:xaop-runtime:$versions.xaop" //com.github.xuexiangjys.XAOP
-xlibrary.xaop_plugin = "com.github.pppscn.XAOP:xaop-plugin:$versions.xaop" //com.github.xuexiangjys.XAOP
-xlibrary.xutil_core = "com.github.xuexiangjys.XUtil:xutil-core:$versions.xutil"
-xlibrary.xutil_sub = "com.github.xuexiangjys.XUtil:xutil-sub:$versions.xutil"
-xlibrary.xhttp2 = "com.github.pppscn:XHttp2:$versions.xhttp2" //com.github.xuexiangjys:XHttp2
-xlibrary.xpage_lib = "com.github.xuexiangjys.XPage:xpage-lib:$versions.xpage"
-xlibrary.xpage_compiler = "com.github.xuexiangjys.XPage:xpage-compiler:$versions.xpage"
-xlibrary.xrouter_runtime = "com.github.xuexiangjys.XRouter:xrouter-runtime:$versions.xrouter"
-xlibrary.xrouter_compiler = "com.github.xuexiangjys.XRouter:xrouter-compiler:$versions.xrouter"
-xlibrary.xrouter_plugin = "com.github.xuexiangjys.XRouter:xrouter-plugin:$versions.xrouter"
+xlibrary.xui = "com.github.pppscn:XUI:$versions.xui"
+xlibrary.xupdate = "com.github.pppscn:XUpdate:$versions.xupdate"
+xlibrary.xaop_runtime = "com.github.pppscn.XAOP:xaop-runtime:$versions.xaop"
+xlibrary.xaop_plugin = "com.github.pppscn.XAOP:xaop-plugin:$versions.xaop"
+xlibrary.xutil_core = "com.github.pppscn.XUtil:xutil-core:$versions.xutil"
+xlibrary.xutil_sub = "com.github.pppscn.XUtil:xutil-sub:$versions.xutil"
+xlibrary.xhttp2 = "com.github.pppscn:XHttp2:$versions.xhttp2"
+xlibrary.xpage_lib = "com.github.pppscn.XPage:xpage-lib:$versions.xpage"
+xlibrary.xpage_compiler = "com.github.pppscn.XPage:xpage-compiler:$versions.xpage"
+xlibrary.xrouter_runtime = "com.github.pppscn.XRouter:xrouter-runtime:$versions.xrouter"
+xlibrary.xrouter_compiler = "com.github.pppscn.XRouter:xrouter-compiler:$versions.xrouter"
+xlibrary.xrouter_plugin = "com.github.pppscn.XRouter:xrouter-plugin:$versions.xrouter"
 
 deps.xlibrary = xlibrary
 
@@ -194,9 +194,9 @@ static def addRepos(RepositoryHandler handler) {
     //handler.mavenCentral { url 'https://maven.aliyun.com/repository/central' }
     handler.google()
     handler.mavenCentral()
-    handler.maven { url 'https://maven.aliyun.com/repository/google' }
-    handler.maven { url 'https://maven.aliyun.com/repository/central' }
-    handler.maven { url 'https://maven.aliyun.com/repository/public' }
+    //handler.maven { url 'https://maven.aliyun.com/repository/google' }
+    //handler.maven { url 'https://maven.aliyun.com/repository/central' }
+    //handler.maven { url 'https://maven.aliyun.com/repository/public' }
     handler.maven { url "https://repo1.maven.org/maven2/" }
     handler.maven { url 'https://oss.sonatype.org/content/repositories/public' }
     handler.maven { url "https://jitpack.io" }
@@ -209,7 +209,8 @@ ext.addRepos = this.&addRepos
 //自动添加XAOP和XRouter插件
 project.buildscript.configurations.each { configuration ->
     def dependencies = getProject().dependencies
-    if (configuration.name == "classpath") {
+    //noinspection ChangeToOperator
+    if (configuration.name.equals("classpath")) {
         //XAOP插件
         configuration.dependencies.add(dependencies.create(deps.xlibrary.xaop_plugin))
         //XRouter插件

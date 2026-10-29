@@ -22,9 +22,10 @@
 
 > `加入SmsF预览体验计划`（在线更新每周构建版，率先体验新版&修复BUG）
 
-**升级操作提示：** 
+**升级操作提示：**
+
 - `加入SmsF预览体验计划`后在线更新（`关于软件`页面开启，`v3.3.0_240305+`适用）
--  手动下载：https://github.com/pppscn/SmsForwarder/actions/workflows/Weekly_Build.yml
+- 手动下载：https://github.com/pppscn/SmsForwarder/actions/workflows/Weekly_Build.yml
 
 --------
 
@@ -101,19 +102,17 @@
 + https://github.com/yanzhenjie/AndServer (HttpServer)
 + https://github.com/jenly1314/Location (Location)
 + https://gitee.com/xuankaicat/kmnkt (socket通信)
-+ [<img src="https://resources.jetbrains.com/storage/products/company/brand/logos/jb_beam.svg?_ga=2.126618957.1361252949.1638261367-1417196221.1635638144&_gl=1*1pfl3dq*_ga*MTQxNzE5NjIyMS4xNjM1NjM4MTQ0*_ga_V0XZL7QHEB*MTYzODMzMjA4OC43LjAuMTYzODMzMjA5Ny4w" alt="GitHub license" style="width：96px" width="96" />](https://jb.gg/OpenSourceSupport)  (License Certificate for JetBrains All Products Pack)
++ [<img src="https://resources.jetbrains.com/storage/products/company/brand/logos/jetbrains.svg" alt="GitHub license" style="width：159px; height: 32px" width="159" height="32" />](https://jb.gg/OpenSourceSupport)  (License Certificate for JetBrains All Products Pack)
 
 --------
 
 ## 如果您觉得本工具对您有帮助，不妨在右上角点亮一颗小星星，以示鼓励！
 
-<a href="https://star-history.com/#pppscn/SmsForwarder&Date">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=pppscn/SmsForwarder&type=Date&theme=dark" />
-    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=pppscn/SmsForwarder&type=Date" />
-    <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=pppscn/SmsForwarder&type=Date" />
-  </picture>
-</a>
+<p align="center">
+  <a href="https://github.com/pppscn/SmsForwarder/tree/star-history">
+    <img alt="Star History Chart" src="https://raw.githubusercontent.com/pppscn/SmsForwarder/refs/heads/star-history/star-history.svg" />
+  </a>
+</p>
 
 --------
 
